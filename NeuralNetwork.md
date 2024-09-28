@@ -67,6 +67,10 @@ A Neural Network is a computational model inspired by the human brain, designed 
 - Neural network architecture using self-attention mechanisms, widely used in NLP.
 - **Applications:** Language modeling (e.g., GPT, BERT), translation, summarization.
 
+![ss](attention-models.gif)
+
+![ss](transformers.png)
+
 ### 6. Generative Adversarial Network (GAN):
 
 - Consists of two networks (generator and discriminator) competing to produce realistic data.
@@ -118,6 +122,11 @@ A Neural Network is a computational model inspired by the human brain, designed 
 - **Definition:** A simplified version of LSTM with fewer gates (reset and update gates) which make it computationally more efficient while still handling long-term dependencies well.
 - **Difference:** Has fewer parameters than LSTM, making it faster and easier to train.
 - **Advantage:** Provides similar performance to LSTM with reduced computational complexity.
+
+### 4. Seq2Seq RNN (Sequence to Sequence)
+- **Definition:**  A specialized RNN used for translating sequences (e.g., text translation).
+- **Structure:**  Consists of an encoder (processes input) and a decoder (generates output), both using LSTMs or GRUs.
+- **Use:**  Widely applied in machine translation, chatbots, and summarization.
 
 # Activation Functions in Neural Networks
 
