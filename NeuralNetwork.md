@@ -1,45 +1,123 @@
 # Neural Network
+A Neural Network is a computational model inspired by the human brain, designed to recognize patterns, make predictions, and solve complex problems. It's a key component of machine learning and deep learning.
+
+![ss](/neural-network.gif)
+
+### Neural Network Basics:
+- **Artificial Neurons (Nodes):** Process inputs and produce outputs.
+- **Connections (Edges):** Transmit signals between nodes.
+- **Layers:** Organized nodes and connections.
+- **Activation Functions:** Introduce non-linearity to node outputs.
+
+### Neural Network Components:
+- **Input Layer:** Receives input data.
+- **Hidden Layers:** Processes and transforms data.
+- **Output Layer:** Produces predicted outputs.
+- **Bias:** Adjusts node outputs.
+
+### Training Process:
+- Initialize ***weights*** and ***biases***.
+- Perform ***forward propagation*** to generate predictions.
+- Calculate the loss ***(error between predicted and actual values)***.
+- Perform ***backward propagation*** to compute gradients.
+- Update weights using ***gradient descent*** or an **optimization algorithm**.
+- Repeat for multiple ***epochs*** until the loss is minimized.
 
 # Types of Neural Network
 ### 1. Feedforward Neural Network (FNN):
 
 - Basic neural network where data flows in one direction from input to output.
 - **Applications:** Classification, regression.
+- **Limitations:** 
+    - Training Time
+    - Pixel Inequality
+    - High Dimensionality
+    - Limited Feauture Extraction
 
 ### 2. Convolutional Neural Network (CNN):
 
 - Specialized for processing grid-like data, particularly images.
 - **Applications:** Image recognition, object detection, video analysis.
+- **Limitations:**
+    - Needs large data
+    - Lacks temporal handling
+    - High computation
 
-### 3. Recurrent Neural Network (RNN):
+### 3. [Autoencoder:](/NeuralNetwork.md#types-of-autoencoders)
 
-- Designed for sequential data, allowing information to persist over time.
+- A type of neural network designed for data compression, anomaly detection, dimensionally reduction and feature learning.
+- **Components:** Encoder, Decoder
+- **Applications:** Data compression, anomaly detection.
+- **Limitations:**
+    - Overfitting
+    - Lossy reconstruction
+    - Poor data generation
+
+### 4. [Recurrent Neural Network (RNN):](/NeuralNetwork.md#types-of-recurrent-neural-network)
+
+- Designed to recognize patterns in  sequences of data such as time series or natural language.
 - **Applications:** Time series prediction, natural language processing (NLP).
+- **Limitations:**
+    - Vanishing gradients
+    - Slow training
+    - Limited memory
 
-### 4. Long Short-Term Memory (LSTM):
+### 5. Attention Models / Transformers:
 
-- A type of RNN that mitigates short-term memory issues, handling long-term dependencies better.
-- **Applications:** Speech recognition, text generation, sequence prediction.
+- Neural network architecture using self-attention mechanisms, widely used in NLP.
+- **Applications:** Language modeling (e.g., GPT, BERT), translation, summarization.
 
-### 5. Generative Adversarial Network (GAN):
+### 6. Generative Adversarial Network (GAN):
 
 - Consists of two networks (generator and discriminator) competing to produce realistic data.
 - **Applications:** Image generation, deepfakes, data augmentation.
-
-### 6. Autoencoder:
-
-- A network trained to compress and then reconstruct data, often used for unsupervised learning.
-- **Applications:** Data compression, anomaly detection.
 
 ### 7. Radial Basis Function Network (RBFN):
 
 - Uses radial basis functions as activation functions.
 - **Applications:** Function approximation, time-series prediction.
 
-### 8. Attention Models / Transformers:
+## Types of AutoEncoders
 
-- Neural network architecture using self-attention mechanisms, widely used in NLP.
-- **Applications:** Language modeling (e.g., GPT, BERT), translation, summarization.
+### 1. Vanilla Autoencoder
+- **Structure:**  Basic autoencoder with a symmetrical architecture (encoder and decoder).
+- **Application:**  Primarily used for dimensionality reduction and feature learning.
+- **Limitation:**  Prone to learning trivial mappings, making it less effective for complex patterns.
+
+### 2. Denoising Autoencoder (DAE)
+- **Purpose:**  To remove noise from input data.
+- **Mechanism:**  Trained by adding random noise to the input data and then reconstructing the original, clean data.
+- **Types:**  Guassian noise, Salt and pepper noise
+- **Application:**  Useful in image denoising, audio denoising, and data preprocessing.
+
+### 3. Convolutional Autoencoder (CAE)
+- **Purpose:**  Designed to work with spatial data like images.
+- **Mechanism:**  Uses convolutional and pooling layers in the encoder and deconvolutional (transposed convolution) layers in the decoder.
+- **Application:**  Image denoising, image compression, and image generation.
+- **Use Case:**  Used extensively in computer vision for learning compact, spatially-aware representations.
+
+### 4. Variational Autoencoder (VAE)
+- **Purpose:**  A probabilistic autoencoder that learns a latent distribution instead of fixed encodings.
+- **Mechanism:**  The encoder outputs the mean and variance of a Gaussian distribution, and a sample is drawn from this distribution during training.
+- **Application:**  Generative modeling, image synthesis, and anomaly detection.
+- **Use Case:**  VAEs are widely used for generating new data points that are similar to the input data (e.g., generating new images of faces).
+
+## Types of Recurrent Neural Network
+
+### 1. Simple RNN
+- **Definition:** A basic RNN that processes sequences by updating its hidden state at each time step.
+- **Use:** Good for simple time-series data but struggles with long-term dependencies.
+- **Limitation:** Suffers from vanishing and exploding gradient problems.
+
+### 2. LSTM (Long Short-Term Memory)
+- **Definition:** An advanced RNN designed to capture long-term dependencies using memory cells and gates.
+- **Components:** Includes forget, input, and output gates that control information flow.
+- **Advantage:** Effective in capturing context from distant past inputs, making it suitable for NLP and speech recognition.
+
+### 3. GRU (Gated Recurrent Unit)
+- **Definition:** A simplified version of LSTM with fewer gates (reset and update gates) which make it computationally more efficient while still handling long-term dependencies well.
+- **Difference:** Has fewer parameters than LSTM, making it faster and easier to train.
+- **Advantage:** Provides similar performance to LSTM with reduced computational complexity.
 
 # Activation Functions in Neural Networks
 
